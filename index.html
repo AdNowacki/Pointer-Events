@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+
+      #target {
+         height: 40vh;
+         background: lightblue;
+      }
+   </style>
+</head>
+<body>
+
+   <div id="target"></div>
+   
+
+   <script>
+
+   // https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events
+
+      
+    function handler(event) {
+       console.group(`Event type: ${event.type}`);
+       console.log(event);
+       console.groupEnd();
+    }
+
+    (function init() {
+      var el=document.getElementById("target");
+
+      // Pointer Event
+      el.addEventListener('pointerover', handler);
+      el.addEventListener('pointerenter', handler);
+      el.addEventListener('pointerdown', handler);
+      el.addEventListener('pointermove', handler);
+      el.addEventListener('pointerup', handler);
+      el.addEventListener('pointercancel', handler);
+      el.addEventListener('pointerout', handler);
+      el.addEventListener('pointerleave', handler);
+      el.addEventListener('gotpointercapture', handler);
+      el.addEventListener('lostpointercapture', handler);
+
+      // Mouse Event
+      el.addEventListener('mouseenter', handler);
+      el.addEventListener('mouseleave', handler);
+      el.addEventListener('mouseover', handler);
+      el.addEventListener('mousemove', handler);
+      el.addEventListener('click', handler);
+      el.addEventListener('dbclick', handler);
+
+      // Touch Event
+      el.addEventListener('touchstart', handler);
+      el.addEventListener('touchend', handler);
+      el.addEventListener('touchmove', handler);
+    })();
+  
+
+   </script>
+
+</body>
+</html>
